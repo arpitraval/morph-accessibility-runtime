@@ -37,6 +37,14 @@ jobs:
 
       - name: Verify workspace, fatal eval gate, and real browser tests
         run: npm run check
+        env:
+          MORPH_DEMO_MODE: replay
+          NEXT_PUBLIC_MORPH_OBSERVATORY_MODE: replay
+          MORPH_MULTI_AGENT_ENABLED: "false"
+          CODEX_ADAPTER_FORGE_ENABLED: "false"
+          MORPH_REQUIRE_CONSENT: "true"
+          MORPH_MAX_REPLANS: "3"
+          OPENAI_API_KEY: "mock-placeholder-key-for-ci-passing"
 
       - name: Audit production dependencies
         run: npm audit --omit=dev --audit-level=high
