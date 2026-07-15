@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: morph-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The Codex managed Windows runner can deny child-process creation with
+      # spawn EPERM. CI deliberately does not use that local exception or a mock:
+      # real Chromium, Playwright, and axe-core remain mandatory here.
+      - name: Install real Chromium for security gates
+        run: npx playwright install --with-deps chromium
+
+      - name: Verify workspace, fatal eval gate, and real browser tests
+        run: npm run check
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high

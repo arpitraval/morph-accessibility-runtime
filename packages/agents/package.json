@@ -1,0 +1,23 @@
+{
+  "name": "@morph/agents",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build --silent && node --test dist/index.test.js dist/client.test.js"
+  },
+  "dependencies": {
+    "@morph/contracts": "^0.1.0",
+    "@morph/state-machine": "^0.1.0",
+    "openai": "^6.46.0",
+    "zod": "^4.4.3"
+  }
+}

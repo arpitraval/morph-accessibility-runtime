@@ -1,0 +1,21 @@
+{
+  "name": "@morph/orchestrator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/index.js",
+    "health": "npm run build --silent && node dist/index.js --health",
+    "test": "npm run build --silent && node --test --test-isolation=none dist/*.test.js"
+  },
+  "dependencies": {
+    "@morph/contracts": "*",
+    "@morph/state-machine": "*",
+    "pg": "8.22.0"
+  },
+  "devDependencies": {
+    "@types/pg": "8.20.0"
+  }
+}

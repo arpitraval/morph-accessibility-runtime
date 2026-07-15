@@ -1,0 +1,23 @@
+{
+  "name": "@morph/evals",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "eval": "npm run build --silent && node dist/runner.js",
+    "test": "npm run build --silent && node --test --test-isolation=none dist/*.test.js"
+  },
+  "dependencies": {
+    "@morph/agents": "*",
+    "@morph/contracts": "*",
+    "@morph/state-machine": "*"
+  }
+}

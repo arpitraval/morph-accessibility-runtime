@@ -1,0 +1,107 @@
+/* MORPH's constrained component grammar. Only fixed classes and enumerated data attributes are accepted. */
+.adaptive-list {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.adaptive-list-item {
+  min-width: 0;
+}
+
+.adaptive-heading-description {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.7em;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.adaptive-action:focus-visible {
+  outline: 4px solid #70a8ff;
+  outline-offset: 4px;
+}
+
+.adaptive-action[data-font-scale="large"],
+.adaptive-copy[data-font-scale="large"],
+.adaptive-status[data-font-scale="large"],
+.adaptive-heading[data-font-scale="large"] {
+  font-size: 1.25em;
+}
+
+.adaptive-action[data-font-scale="x-large"],
+.adaptive-copy[data-font-scale="x-large"],
+.adaptive-status[data-font-scale="x-large"],
+.adaptive-heading[data-font-scale="x-large"] {
+  font-size: 1.6em;
+}
+
+.adaptive-action[data-presentation-mode="high-contrast"] {
+  border: 3px solid #ffef52;
+  background: #050505;
+  color: #fff;
+}
+
+.adaptive-action[data-presentation-mode="high-contrast"] .adaptive-action-description {
+  color: #fff;
+}
+
+.adaptive-copy[data-presentation-mode="high-contrast"],
+.adaptive-status[data-presentation-mode="high-contrast"] {
+  border: 2px solid #fff;
+  background: #050505;
+  color: #fff;
+}
+
+.adaptive-action[data-reduce-motion="true"],
+.adaptive-copy[data-reduce-motion="true"],
+.adaptive-status[data-reduce-motion="true"] {
+  animation: none;
+  scroll-behavior: auto;
+  transition: none;
+}
+
+.adaptive-modal-backdrop {
+  position: fixed;
+  z-index: 1000;
+  display: grid;
+  inset: 0;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.82);
+  padding: 1rem;
+}
+
+.adaptive-modal {
+  width: min(36rem, 100%);
+  border: 3px solid #ffef52;
+  border-radius: 0.75rem;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.55);
+  padding: 1.5rem;
+}
+
+.adaptive-modal:focus-within {
+  outline: 4px solid #70a8ff;
+  outline-offset: 4px;
+}
+
+.adaptive-modal h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.adaptive-modal p {
+  margin: 0.75rem 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.adaptive-modal-actions {
+  display: grid;
+  gap: 0.75rem;
+}
