@@ -29,6 +29,18 @@ The application opens in a **Split-Screen Developer Shell**:
 
 ---
 
+## 🌍 The Human Impact (Why We Built MORPH)
+
+According to the World Health Organization, **1.3 billion people** live with a significant disability today. Yet, the internet is still fundamentally hostile to them.
+
+Currently, accessibility relies on a flawed premise: waiting for millions of individual companies to manually fix their code, or forcing users to buy clunky, outdated screen readers that break when websites update.
+
+**MORPH flips the power dynamic.**
+
+Instead of waiting for the world to become accessible, MORPH acts as a protective shield at the user's edge. Whether a user has low vision, limited motor control (One-Switch), or requires reduced cognitive load, MORPH empowers them to forcefully adapt the web to their own body and intent in real-time. We are moving from a world where users adapt to technology, to a world where technology dynamically adapts to the human.
+
+---
+
 ## 🛠️ The 2026 OpenAI Tech Stack (Key Architecture)
 
 MORPH is built using deterministic safety code combined with the absolute cutting edge of the OpenAI ecosystem:
